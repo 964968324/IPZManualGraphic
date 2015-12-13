@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:../IPZManualGraphic/IPZExcuteObject.h">
+   </FileRef>
+   <FileRef
+      location = "group:../IPZManualGraphic/IPZExcuteObject.m">
+   </FileRef>
+   <FileRef
+      location = "group:../IPZManualGraphic/IPZSemaphoreTest.h">
+   </FileRef>
+   <FileRef
+      location = "group:../IPZManualGraphic/IPZSemaphoreTest.m">
+   </FileRef>
+   <FileRef
+      location = "self:IPZManualGraphic.xcodeproj">
+   </FileRef>
+</Workspace>
