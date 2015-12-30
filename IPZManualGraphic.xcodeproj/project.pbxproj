@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F385CCE1C33D8AA007DEAD7 /* IPNLoadingFailLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F385CCD1C33D8AA007DEAD7 /* IPNLoadingFailLayer.m */; };
 		1F3B18D21C1AC4A100AA87CD /* IPNLoadingCheckmarkLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3B18D11C1AC4A100AA87CD /* IPNLoadingCheckmarkLayer.m */; };
 		1F51F3551B8C14FE0080C627 /* IPZBasicDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F51F3541B8C14FE0080C627 /* IPZBasicDrawView.m */; };
 		1F5B56EC1BE8609200CC6E3C /* IPZArcLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5B56EB1BE8609200CC6E3C /* IPZArcLayer.m */; };
@@ -27,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F385CCC1C33D8AA007DEAD7 /* IPNLoadingFailLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPNLoadingFailLayer.h; sourceTree = "<group>"; };
+		1F385CCD1C33D8AA007DEAD7 /* IPNLoadingFailLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPNLoadingFailLayer.m; sourceTree = "<group>"; };
 		1F3B18D01C1AC4A100AA87CD /* IPNLoadingCheckmarkLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPNLoadingCheckmarkLayer.h; sourceTree = "<group>"; };
 		1F3B18D11C1AC4A100AA87CD /* IPNLoadingCheckmarkLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPNLoadingCheckmarkLayer.m; sourceTree = "<group>"; };
 		1F51F3531B8C14FE0080C627 /* IPZBasicDrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPZBasicDrawView.h; sourceTree = "<group>"; };
@@ -75,6 +78,8 @@
 		1F8088131B96D0CA005E4018 /* Layers */ = {
 			isa = PBXGroup;
 			children = (
+				1F385CCC1C33D8AA007DEAD7 /* IPNLoadingFailLayer.h */,
+				1F385CCD1C33D8AA007DEAD7 /* IPNLoadingFailLayer.m */,
 				C76EB4751C1B25BA0071CA28 /* IPZColorLoadLayer.h */,
 				C76EB4761C1B25BA0071CA28 /* IPZColorLoadLayer.m */,
 				1FEB41D21B9581B0003789E6 /* IPZPointLayer.h */,
@@ -220,6 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F385CCE1C33D8AA007DEAD7 /* IPNLoadingFailLayer.m in Sources */,
 				1FEB41D11B95815C003789E6 /* IPZLoadView.m in Sources */,
 				1FAD82141B8AB9A7006D624B /* IPZTransform3DView.m in Sources */,
 				1FEB41D41B9581B0003789E6 /* IPZPointLayer.m in Sources */,

@@ -8,14 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+
 typedef NS_ENUM(NSInteger, IPNLoadStatus) {
     IPNLoadStatusLoading   ,  //加载中
     IPNLoadStatusSuccess   ,  //成功
     IPNLoadStatusFail         //失败
 };
 
+typedef void(^IPNLoadingFinishCallback)(BOOL finish) ;
+
 @interface IPZDynamicArcView : UIView
 
 @property (nonatomic,assign) IPNLoadStatus status;
+@property (nonatomic,strong) IPNLoadingFinishCallback callBack;
 
 @end

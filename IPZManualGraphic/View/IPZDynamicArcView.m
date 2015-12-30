@@ -10,6 +10,7 @@
 #import "IPZArcLayer.h"
 #import "IPNLoadingCheckmarkLayer.h"
 #import "IPNLoadingLayer.h"
+#import "IPNLoadingFailLayer.h"
 
 #define IPNTimePerRound         6
 #define IPNFullTime             13
@@ -22,8 +23,10 @@
     
     BOOL _hasFinish;
     __weak IPNLoadingCheckmarkLayer *_checkmarkLayer;
+    __weak IPNLoadingFailLayer              *_failLayer;
+    
+    __weak NSTimer *_timer;
 }
-
 
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
@@ -31,52 +34,64 @@
     // Drawing code
     [super drawRect:rect];
     _finishTime=INT32_MAX;
+    
     IPNLoadingLayer *layer=[IPNLoadingLayer new];
-    layer.frame=CGRectMake(0, 0, 200, 200);
+    layer.frame=self.bounds;
+    layer.shouldRasterize=true;
     [self.layer addSublayer:layer];
     _loadingLayer=layer;
-    [NSTimer scheduledTimerWithTimeInterval:0.15 target:self selector:@selector(updateColor:) userInfo:nil repeats:true];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        self.status=IPNLoadStatusSuccess;
-    });
+    _timer=[NSTimer scheduledTimerWithTimeInterval:0.11 target:self selector:@selector(updateProgress:) userInfo:nil repeats:true];
 }
 
 -(void)setStatus:(IPNLoadStatus)status{
-    if (status==IPNLoadStatusSuccess) {
+    _status=status;
+    if (status==IPNLoadStatusSuccess || status==IPNLoadStatusFail) {
         int round=_loadingTime/IPNFullTime;
-        int currentValue=round%IPNFullTime;
-        if (currentValue<=IPNTimePerRound) {
-            _finishTime=round*IPNFullTime+IPNTimePerRound;
-        }else{
-            _finishTime=(round+1)*IPNFullTime+IPNTimePerRound;
-        }
+        _finishTime=(round+1)*IPNFullTime;
     }
 }
 
-- (void)updateColor:(id)sender{
+- (void)updateProgress:(id)sender{
     _loadingTime++;
-    if(_loadingTime==_finishTime){
+    if(!_hasFinish && _loadingTime>_finishTime){
         _hasFinish=true;
         _loadingTime=0;
-        
-        IPNLoadingCheckmarkLayer *layer=[IPNLoadingCheckmarkLayer new];
-        layer.frame=CGRectMake(0, 0, 200, 200);
-        [self.layer addSublayer:layer];
-        _checkmarkLayer=layer;
+        if (_status==IPNLoadStatusSuccess) {
+            _callBack(true);
+            IPNLoadingCheckmarkLayer *layer=[IPNLoadingCheckmarkLayer new];
+            layer.frame=self.bounds;
+            layer.shouldRasterize=true;
+            layer.time=0;
+            [self.layer addSublayer:layer];
+            _checkmarkLayer=layer;
+        }else{
+            _callBack(false);
+            IPNLoadingFailLayer *layer=[IPNLoadingFailLayer new];
+            layer.frame=self.bounds;
+            layer.shouldRasterize=true;
+            layer.time=0;
+            [self.layer addSublayer:layer];
+            _failLayer=layer;
+        }
     }
     
     if (!_hasFinish) {
         _loadingLayer.time=_loadingTime;
     }else{
-        if (_loadingTime>6) {
+        if (_loadingTime>12) {
+            [_loadingLayer removeFromSuperlayer];
             NSTimer *timer=sender;
             [timer invalidate];
             return;
-            
-            
         }
         _checkmarkLayer.time=_loadingTime;
+        _failLayer.time=_loadingTime;
     }
+}
+
+-(void)dealloc{
+    [_timer invalidate];
+    _timer=nil;
 }
 
 @end

@@ -7,9 +7,11 @@
 //
 
 #import "IPNLoadingLayer.h"
+#import "IPNColor.h"
 
+#define IPNRadius             30
 #define IPNCellCountPerRound    21
-#define IPZOriginAngle          -M_PI+M_PI*2/IPNCellCountPerRound
+#define IPZOriginAngle          -M_PI+M_PI*2/24
 #define IPNTimePerRound         6
 #define IPNDelayPerRound        0.5
 #define IPNTimePerFullRound     6.5
@@ -39,10 +41,8 @@
 }
 
 -(void)drawInContext:(CGContextRef)ctx{
-    
-    CGContextSetRGBFillColor(ctx, 0/255.0, 165/255.0, 221/255.0, 1);
-    CGContextSetRGBStrokeColor(ctx, 0/255.0, 165/255.0, 221/255.0, 1);
-    CGContextSetLineWidth(ctx, 3);
+    CGContextSetStrokeColorWithColor(ctx, kActiveColor.CGColor);
+    CGContextSetLineWidth(ctx, 2);
     CGContextBeginPath(ctx);
     
     CGFloat time = [[self presentationLayer] time];
@@ -58,7 +58,7 @@
         CGFloat period=(1+time)*time/2;
         startAngle=originAngle;
         endAngle=originAngle-period*2*M_PI/IPNCellCountPerRound;
-        CGContextAddArc(ctx, CGRectGetMidX(self.bounds) , CGRectGetMidY(self.bounds) , 50, startAngle,endAngle , 1);
+        CGContextAddArc(ctx, CGRectGetMidX(self.bounds) , CGRectGetMidY(self.bounds) , IPNRadius, startAngle,endAngle , 1);
     }else{
         if (time>(IPNTimePerRound+IPNTimePerFullRound)) {
             time=IPNTimePerRound+IPNTimePerFullRound;
@@ -70,7 +70,7 @@
         
         startAngle=originAngle-period*2*M_PI/IPNCellCountPerRound;
         endAngle=originAngle;
-        CGContextAddArc(ctx, CGRectGetMidX(self.bounds) , CGRectGetMidY(self.bounds) , 50, startAngle,endAngle , 1);
+        CGContextAddArc(ctx, CGRectGetMidX(self.bounds) , CGRectGetMidY(self.bounds) , IPNRadius, startAngle,endAngle , 1);
     }
     
     CGContextStrokePath(ctx);
