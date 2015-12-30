@@ -78,18 +78,18 @@
 		1F8088131B96D0CA005E4018 /* Layers */ = {
 			isa = PBXGroup;
 			children = (
-				1F385CCC1C33D8AA007DEAD7 /* IPNLoadingFailLayer.h */,
-				1F385CCD1C33D8AA007DEAD7 /* IPNLoadingFailLayer.m */,
 				C76EB4751C1B25BA0071CA28 /* IPZColorLoadLayer.h */,
 				C76EB4761C1B25BA0071CA28 /* IPZColorLoadLayer.m */,
 				1FEB41D21B9581B0003789E6 /* IPZPointLayer.h */,
 				1FEB41D31B9581B0003789E6 /* IPZPointLayer.m */,
 				1F5B56EA1BE8609200CC6E3C /* IPZArcLayer.h */,
 				1F5B56EB1BE8609200CC6E3C /* IPZArcLayer.m */,
-				1F3B18D01C1AC4A100AA87CD /* IPNLoadingCheckmarkLayer.h */,
-				1F3B18D11C1AC4A100AA87CD /* IPNLoadingCheckmarkLayer.m */,
 				C731AD651C1D30C50014AEAA /* IPNLoadingLayer.h */,
 				C731AD661C1D30C50014AEAA /* IPNLoadingLayer.m */,
+				1F3B18D01C1AC4A100AA87CD /* IPNLoadingCheckmarkLayer.h */,
+				1F3B18D11C1AC4A100AA87CD /* IPNLoadingCheckmarkLayer.m */,
+				1F385CCC1C33D8AA007DEAD7 /* IPNLoadingFailLayer.h */,
+				1F385CCD1C33D8AA007DEAD7 /* IPNLoadingFailLayer.m */,
 			);
 			path = Layers;
 			sourceTree = "<group>";

@@ -7,8 +7,10 @@
 //
 
 #import "IPNLoadingFailLayer.h"
-#import "IPNColor.h"
+#import <UIKit/UIKit.h>
 
+#define kActiveColor  [UIColor colorWithRed:209.0/255 green:17.0/255 blue:29.0/255 alpha:1.0]
+#define kNegativeColor [UIColor colorWithRed:31.0/255 green:33.0/255 blue:48.0/255 alpha:1.0]
 #define IPNRadius             30
 #define IPNCellCountPerRound    21
 #define IPZOriginAngle          -M_PI+M_PI*2/24
