@@ -13,12 +13,21 @@
 
 -(id)initWithCoder:(NSCoder *)aDecoder{
     if (self=[super initWithCoder:aDecoder]) {
-        [self initAnimationByPtCount:5 andMaxDuration:50];
+        
     }
     return self;
 }
 
--(void) initAnimationByPtCount:(int)ptCount andMaxDuration:(int)duration{
+-(void)awakeFromNib{
+    [super awakeFromNib];
+    [self initAnimationByPtCount:5 andMaxDuration:50];
+}
+
+-(void)drawRect:(CGRect)rect{
+    self.layer.masksToBounds=true;
+}
+
+-(void)initAnimationByPtCount:(int)ptCount andMaxDuration:(int)duration{
     double width=self.bounds.size.width;
     double height=self.bounds.size.height;
     int posCount=2*(ptCount -1 ) +ceil(width/duration)+1;
@@ -67,15 +76,6 @@
         animation.additive = YES;  //添加动画到所有子视图
         [firPT addAnimation:animation forKey:@"shake"];
     }
-}
-
-
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    [self.layer setShadowOffset:CGSizeMake(-5, -5)];
-    [self.layer setShadowOpacity:0.2];
-    
 }
 
 

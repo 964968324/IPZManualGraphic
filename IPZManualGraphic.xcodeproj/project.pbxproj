@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F385CCE1C33D8AA007DEAD7 /* IPNLoadingFailLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F385CCD1C33D8AA007DEAD7 /* IPNLoadingFailLayer.m */; };
-		1F3B18D21C1AC4A100AA87CD /* IPNLoadingCheckmarkLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3B18D11C1AC4A100AA87CD /* IPNLoadingCheckmarkLayer.m */; };
+		1F385CCE1C33D8AA007DEAD7 /* IPZLoadingFailLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F385CCD1C33D8AA007DEAD7 /* IPZLoadingFailLayer.m */; };
+		1F3B18D21C1AC4A100AA87CD /* IPZLoadingCheckmarkLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3B18D11C1AC4A100AA87CD /* IPZLoadingCheckmarkLayer.m */; };
 		1F51F3551B8C14FE0080C627 /* IPZBasicDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F51F3541B8C14FE0080C627 /* IPZBasicDrawView.m */; };
 		1F5B56EC1BE8609200CC6E3C /* IPZArcLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5B56EB1BE8609200CC6E3C /* IPZArcLayer.m */; };
 		1F5B56EF1BE863E200CC6E3C /* IPZDynamicArcView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5B56EE1BE863E200CC6E3C /* IPZDynamicArcView.m */; };
@@ -21,17 +21,15 @@
 		1FAD82141B8AB9A7006D624B /* IPZTransform3DView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FAD82131B8AB9A7006D624B /* IPZTransform3DView.m */; };
 		1FEB41D11B95815C003789E6 /* IPZLoadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FEB41D01B95815C003789E6 /* IPZLoadView.m */; };
 		1FEB41D41B9581B0003789E6 /* IPZPointLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FEB41D31B9581B0003789E6 /* IPZPointLayer.m */; };
-		1FFDA5911BA1581A005B3A0B /* IPZSemaphoreTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FFDA5901BA1581A005B3A0B /* IPZSemaphoreTest.m */; };
-		1FFDA5941BA15D8D005B3A0B /* IPZAsyncExcuteObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FFDA5931BA15D8D005B3A0B /* IPZAsyncExcuteObject.m */; };
-		C731AD671C1D30C50014AEAA /* IPNLoadingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C731AD661C1D30C50014AEAA /* IPNLoadingLayer.m */; };
+		C731AD671C1D30C50014AEAA /* IPZLoadingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C731AD661C1D30C50014AEAA /* IPZLoadingLayer.m */; };
 		C76EB4771C1B25BA0071CA28 /* IPZColorLoadLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C76EB4761C1B25BA0071CA28 /* IPZColorLoadLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1F385CCC1C33D8AA007DEAD7 /* IPNLoadingFailLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPNLoadingFailLayer.h; sourceTree = "<group>"; };
-		1F385CCD1C33D8AA007DEAD7 /* IPNLoadingFailLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPNLoadingFailLayer.m; sourceTree = "<group>"; };
-		1F3B18D01C1AC4A100AA87CD /* IPNLoadingCheckmarkLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPNLoadingCheckmarkLayer.h; sourceTree = "<group>"; };
-		1F3B18D11C1AC4A100AA87CD /* IPNLoadingCheckmarkLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPNLoadingCheckmarkLayer.m; sourceTree = "<group>"; };
+		1F385CCC1C33D8AA007DEAD7 /* IPZLoadingFailLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPZLoadingFailLayer.h; sourceTree = "<group>"; };
+		1F385CCD1C33D8AA007DEAD7 /* IPZLoadingFailLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPZLoadingFailLayer.m; sourceTree = "<group>"; };
+		1F3B18D01C1AC4A100AA87CD /* IPZLoadingCheckmarkLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPZLoadingCheckmarkLayer.h; sourceTree = "<group>"; };
+		1F3B18D11C1AC4A100AA87CD /* IPZLoadingCheckmarkLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPZLoadingCheckmarkLayer.m; sourceTree = "<group>"; };
 		1F51F3531B8C14FE0080C627 /* IPZBasicDrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPZBasicDrawView.h; sourceTree = "<group>"; };
 		1F51F3541B8C14FE0080C627 /* IPZBasicDrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPZBasicDrawView.m; sourceTree = "<group>"; };
 		1F5B56EA1BE8609200CC6E3C /* IPZArcLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPZArcLayer.h; sourceTree = "<group>"; };
@@ -54,12 +52,8 @@
 		1FEB41D01B95815C003789E6 /* IPZLoadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPZLoadView.m; sourceTree = "<group>"; };
 		1FEB41D21B9581B0003789E6 /* IPZPointLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IPZPointLayer.h; path = ../IPZPointLayer.h; sourceTree = "<group>"; };
 		1FEB41D31B9581B0003789E6 /* IPZPointLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IPZPointLayer.m; path = ../IPZPointLayer.m; sourceTree = "<group>"; };
-		1FFDA58F1BA1581A005B3A0B /* IPZSemaphoreTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPZSemaphoreTest.h; sourceTree = "<group>"; };
-		1FFDA5901BA1581A005B3A0B /* IPZSemaphoreTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPZSemaphoreTest.m; sourceTree = "<group>"; };
-		1FFDA5921BA15D8D005B3A0B /* IPZAsyncExcuteObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPZAsyncExcuteObject.h; sourceTree = "<group>"; };
-		1FFDA5931BA15D8D005B3A0B /* IPZAsyncExcuteObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPZAsyncExcuteObject.m; sourceTree = "<group>"; };
-		C731AD651C1D30C50014AEAA /* IPNLoadingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPNLoadingLayer.h; sourceTree = "<group>"; };
-		C731AD661C1D30C50014AEAA /* IPNLoadingLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPNLoadingLayer.m; sourceTree = "<group>"; };
+		C731AD651C1D30C50014AEAA /* IPZLoadingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPZLoadingLayer.h; sourceTree = "<group>"; };
+		C731AD661C1D30C50014AEAA /* IPZLoadingLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPZLoadingLayer.m; sourceTree = "<group>"; };
 		C76EB4751C1B25BA0071CA28 /* IPZColorLoadLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPZColorLoadLayer.h; sourceTree = "<group>"; };
 		C76EB4761C1B25BA0071CA28 /* IPZColorLoadLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPZColorLoadLayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,12 +78,12 @@
 				1FEB41D31B9581B0003789E6 /* IPZPointLayer.m */,
 				1F5B56EA1BE8609200CC6E3C /* IPZArcLayer.h */,
 				1F5B56EB1BE8609200CC6E3C /* IPZArcLayer.m */,
-				C731AD651C1D30C50014AEAA /* IPNLoadingLayer.h */,
-				C731AD661C1D30C50014AEAA /* IPNLoadingLayer.m */,
-				1F3B18D01C1AC4A100AA87CD /* IPNLoadingCheckmarkLayer.h */,
-				1F3B18D11C1AC4A100AA87CD /* IPNLoadingCheckmarkLayer.m */,
-				1F385CCC1C33D8AA007DEAD7 /* IPNLoadingFailLayer.h */,
-				1F385CCD1C33D8AA007DEAD7 /* IPNLoadingFailLayer.m */,
+				C731AD651C1D30C50014AEAA /* IPZLoadingLayer.h */,
+				C731AD661C1D30C50014AEAA /* IPZLoadingLayer.m */,
+				1F3B18D01C1AC4A100AA87CD /* IPZLoadingCheckmarkLayer.h */,
+				1F3B18D11C1AC4A100AA87CD /* IPZLoadingCheckmarkLayer.m */,
+				1F385CCC1C33D8AA007DEAD7 /* IPZLoadingFailLayer.h */,
+				1F385CCD1C33D8AA007DEAD7 /* IPZLoadingFailLayer.m */,
 			);
 			path = Layers;
 			sourceTree = "<group>";
@@ -118,10 +112,6 @@
 				1FAD81F01B8AB931006D624B /* AppDelegate.m */,
 				1FAD81F21B8AB931006D624B /* ViewController.h */,
 				1FAD81F31B8AB931006D624B /* ViewController.m */,
-				1FFDA58F1BA1581A005B3A0B /* IPZSemaphoreTest.h */,
-				1FFDA5901BA1581A005B3A0B /* IPZSemaphoreTest.m */,
-				1FFDA5921BA15D8D005B3A0B /* IPZAsyncExcuteObject.h */,
-				1FFDA5931BA15D8D005B3A0B /* IPZAsyncExcuteObject.m */,
 				1FAD81F51B8AB931006D624B /* Main.storyboard */,
 				1FAD81F81B8AB931006D624B /* Images.xcassets */,
 				1FAD81FA1B8AB931006D624B /* LaunchScreen.xib */,
@@ -225,20 +215,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F385CCE1C33D8AA007DEAD7 /* IPNLoadingFailLayer.m in Sources */,
+				1F385CCE1C33D8AA007DEAD7 /* IPZLoadingFailLayer.m in Sources */,
 				1FEB41D11B95815C003789E6 /* IPZLoadView.m in Sources */,
 				1FAD82141B8AB9A7006D624B /* IPZTransform3DView.m in Sources */,
 				1FEB41D41B9581B0003789E6 /* IPZPointLayer.m in Sources */,
 				1FAD81F41B8AB931006D624B /* ViewController.m in Sources */,
-				1F3B18D21C1AC4A100AA87CD /* IPNLoadingCheckmarkLayer.m in Sources */,
-				1FFDA5911BA1581A005B3A0B /* IPZSemaphoreTest.m in Sources */,
+				1F3B18D21C1AC4A100AA87CD /* IPZLoadingCheckmarkLayer.m in Sources */,
 				1FAD81F11B8AB931006D624B /* AppDelegate.m in Sources */,
 				C76EB4771C1B25BA0071CA28 /* IPZColorLoadLayer.m in Sources */,
 				1F5B56EC1BE8609200CC6E3C /* IPZArcLayer.m in Sources */,
 				1F5B56EF1BE863E200CC6E3C /* IPZDynamicArcView.m in Sources */,
 				1FAD81EE1B8AB931006D624B /* main.m in Sources */,
-				1FFDA5941BA15D8D005B3A0B /* IPZAsyncExcuteObject.m in Sources */,
-				C731AD671C1D30C50014AEAA /* IPNLoadingLayer.m in Sources */,
+				C731AD671C1D30C50014AEAA /* IPZLoadingLayer.m in Sources */,
 				1F51F3551B8C14FE0080C627 /* IPZBasicDrawView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

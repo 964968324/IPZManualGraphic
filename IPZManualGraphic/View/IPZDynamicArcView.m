@@ -3,39 +3,36 @@
 //  IPZManualGraphic
 //
 //  Created by 刘宁 on 15/11/3.
-//  Copyright © 2015年 ipaynow. All rights reserved.
+//  Copyright © 2015年 刘宁. All rights reserved.
 //
 
 #import "IPZDynamicArcView.h"
 #import "IPZArcLayer.h"
-#import "IPNLoadingCheckmarkLayer.h"
-#import "IPNLoadingLayer.h"
-#import "IPNLoadingFailLayer.h"
+#import "IPZLoadingCheckmarkLayer.h"
+#import "IPZLoadingLayer.h"
+#import "IPZLoadingFailLayer.h"
 
-#define IPNTimePerRound         6
-#define IPNFullTime             13
+#define IPZTimePerRound         6
+#define IPZFullTime             13
 
 @implementation IPZDynamicArcView
 {
-    __weak IPNLoadingLayer *_loadingLayer;
+    __weak IPZLoadingLayer *_loadingLayer;
     int _loadingTime;
     int _finishTime;
     
     BOOL _hasFinish;
-    __weak IPNLoadingCheckmarkLayer *_checkmarkLayer;
-    __weak IPNLoadingFailLayer              *_failLayer;
+    __weak IPZLoadingCheckmarkLayer *_checkmarkLayer;
+    __weak IPZLoadingFailLayer      *_failLayer;
     
     __weak NSTimer *_timer;
 }
 
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-    [super drawRect:rect];
+-(void)awakeFromNib{
+    [super awakeFromNib];
     _finishTime=INT32_MAX;
     
-    IPNLoadingLayer *layer=[IPNLoadingLayer new];
+    IPZLoadingLayer *layer=[IPZLoadingLayer new];
     layer.frame=self.bounds;
     layer.shouldRasterize=true;
     [self.layer addSublayer:layer];
@@ -43,11 +40,15 @@
     _timer=[NSTimer scheduledTimerWithTimeInterval:0.11 target:self selector:@selector(updateProgress:) userInfo:nil repeats:true];
 }
 
--(void)setStatus:(IPNLoadStatus)status{
+-(void)setStatus:(IPZLoadStatus)status{
+    if (_status!=IPZLoadStatusLoading) {
+        return;
+    }
+    
     _status=status;
-    if (status==IPNLoadStatusSuccess || status==IPNLoadStatusFail) {
-        int round=_loadingTime/IPNFullTime;
-        _finishTime=(round+1)*IPNFullTime;
+    if (status==IPZLoadStatusSuccess || status==IPZLoadStatusFail) {
+        int round=_loadingTime/IPZFullTime;
+        _finishTime=(round+1)*IPZFullTime;
     }
 }
 
@@ -56,17 +57,17 @@
     if(!_hasFinish && _loadingTime>_finishTime){
         _hasFinish=true;
         _loadingTime=0;
-        if (_status==IPNLoadStatusSuccess) {
-            _callBack(true);
-            IPNLoadingCheckmarkLayer *layer=[IPNLoadingCheckmarkLayer new];
+        if (_status==IPZLoadStatusSuccess) {
+            _callBack();
+            IPZLoadingCheckmarkLayer *layer=[IPZLoadingCheckmarkLayer new];
             layer.frame=self.bounds;
             layer.shouldRasterize=true;
             layer.time=0;
             [self.layer addSublayer:layer];
             _checkmarkLayer=layer;
         }else{
-            _callBack(false);
-            IPNLoadingFailLayer *layer=[IPNLoadingFailLayer new];
+            _callBack();
+            IPZLoadingFailLayer *layer=[IPZLoadingFailLayer new];
             layer.frame=self.bounds;
             layer.shouldRasterize=true;
             layer.time=0;

@@ -3,23 +3,23 @@
 //  IPZManualGraphic
 //
 //  Created by 刘宁 on 15/11/3.
-//  Copyright © 2015年 ipaynow. All rights reserved.
+//  Copyright © 2015年 刘宁. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
 
-typedef NS_ENUM(NSInteger, IPNLoadStatus) {
-    IPNLoadStatusLoading   ,  //加载中
-    IPNLoadStatusSuccess   ,  //成功
-    IPNLoadStatusFail         //失败
+typedef NS_ENUM(NSInteger, IPZLoadStatus) {
+    IPZLoadStatusLoading   ,  //加载中
+    IPZLoadStatusSuccess   ,  //成功
+    IPZLoadStatusFail         //失败
 };
 
-typedef void(^IPNLoadingFinishCallback)(BOOL finish) ;
+typedef void(^IPZLoadingFinishCallback)() ;
 
 @interface IPZDynamicArcView : UIView
 
-@property (nonatomic,assign) IPNLoadStatus status;
-@property (nonatomic,strong) IPNLoadingFinishCallback callBack;
+@property (nonatomic,assign) IPZLoadStatus status;
+@property (nonatomic,copy) IPZLoadingFinishCallback callBack;
 
 @end

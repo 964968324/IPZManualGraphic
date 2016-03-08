@@ -3,29 +3,38 @@
 //  IPZManualGraphic
 //
 //  Created by 刘宁 on 15/8/24.
-//  Copyright (c) 2015年 ipaynow. All rights reserved.
+//  Copyright (c) 2015年 刘宁. All rights reserved.
 //
 
 #import "ViewController.h"
-#import "IPZTransform3DView.h"
-#import "IPZSemaphoreTest.h"
+#import "IPZDynamicArcView.h"
 
 @interface ViewController ()
-@property (weak, nonatomic) IBOutlet IPZTransform3DView *threeDview;
-- (IBAction)btnRotateClick:(id)sender;
-- (IBAction)btnSignal:(id)sender;
+@property (weak, nonatomic) IBOutlet IPZDynamicArcView *loadingView;
+
+- (IBAction)btnSuccessClick:(id)sender;
+- (IBAction)btnFailClick:(id)sender;
 
 @end
 
 @implementation ViewController
-{
-    dispatch_semaphore_t _sem;
-    dispatch_queue_t _queue;
-}
+
 
 - (void)viewDidLoad {
-
     // Do any additional setup after loading the view, typically from a nib.
+    _loadingView.callBack=^(){
+        NSString *strResult;
+        if(_loadingView.status==IPZLoadStatusSuccess) {
+            strResult=@"加载成功";
+        }else{
+            strResult=@"加载失败";
+        }
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            UIAlertView *alert=[[UIAlertView alloc]initWithTitle:strResult message:@"" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
+            [alert show];
+        });
+    };
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,26 +42,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)btnRotateClick:(id)sender {
-    if (_sem==nil) {
-        _sem=dispatch_semaphore_create(0);
-        _queue=dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
-    }
-    dispatch_async(_queue, ^{
-        dispatch_semaphore_wait(_sem, DISPATCH_TIME_FOREVER);
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [_threeDview rotate3D];
-        });
-    });
-    
-    
+- (IBAction)btnSuccessClick:(id)sender {
+    _loadingView.status=IPZLoadStatusSuccess;
 }
 
-- (IBAction)btnSignal:(id)sender {
-    _queue=dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
-//    dispatch_async(_queue, ^{
-        IPZSemaphoreTest *sem=[IPZSemaphoreTest new];
-        NSString *value= [sem getValueByExcute];
-//    });
+- (IBAction)btnFailClick:(id)sender {
+    _loadingView.status=IPZLoadStatusFail;
 }
 @end

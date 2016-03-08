@@ -1,24 +1,24 @@
 //
-//  IPNLoadingLayer.m
+//  IPZLoadingLayer.m
 //  IPZManualGraphic
 //
 //  Created by 刘宁 on 15/12/13.
-//  Copyright © 2015年 ipaynow. All rights reserved.
+//  Copyright © 2015年 刘宁. All rights reserved.
 //
 
-#import "IPNLoadingLayer.h"
+#import "IPZLoadingLayer.h"
 #import <UIKit/UIKit.h>
 
 #define kActiveColor  [UIColor colorWithRed:209.0/255 green:17.0/255 blue:29.0/255 alpha:1.0]
-#define IPNRadius             30
-#define IPNCellCountPerRound    21
+#define IPZRadius             30
+#define IPZCellCountPerRound    21
 #define IPZOriginAngle          -M_PI+M_PI*2/24
-#define IPNTimePerRound         6
-#define IPNDelayPerRound        0.5
-#define IPNTimePerFullRound     6.5
-#define IPNFullTime             13
+#define IPZTimePerRound         6
+#define IPZDelayPerRound        0.5
+#define IPZTimePerFullRound     6.5
+#define IPZFullTime             13
 
-@implementation IPNLoadingLayer
+@implementation IPZLoadingLayer
 
 
 @dynamic time;
@@ -47,31 +47,31 @@
     CGContextBeginPath(ctx);
     
     CGFloat time = [[self presentationLayer] time];
-    time=[self getYushuByA:time andB:IPNFullTime];
+    time=[self getYushuByA:time andB:IPZFullTime];
     
     CGFloat originAngle=IPZOriginAngle;
     CGFloat startAngle=0;
     CGFloat endAngle=0;
-    if (time <=IPNTimePerFullRound ) {//弧长度
-        if (time>IPNTimePerRound) {
-            time=IPNTimePerRound;
+    if (time <=IPZTimePerFullRound ) {//弧长度
+        if (time>IPZTimePerRound) {
+            time=IPZTimePerRound;
         }
         CGFloat period=(1+time)*time/2;
         startAngle=originAngle;
-        endAngle=originAngle-period*2*M_PI/IPNCellCountPerRound;
-        CGContextAddArc(ctx, CGRectGetMidX(self.bounds) , CGRectGetMidY(self.bounds) , IPNRadius, startAngle,endAngle , 1);
+        endAngle=originAngle-period*2*M_PI/IPZCellCountPerRound;
+        CGContextAddArc(ctx, CGRectGetMidX(self.bounds) , CGRectGetMidY(self.bounds) , IPZRadius, startAngle,endAngle , 1);
     }else{
-        if (time>(IPNTimePerRound+IPNTimePerFullRound)) {
-            time=IPNTimePerRound+IPNTimePerFullRound;
+        if (time>(IPZTimePerRound+IPZTimePerFullRound)) {
+            time=IPZTimePerRound+IPZTimePerFullRound;
         }
-        CGFloat period=(1+time-IPNTimePerFullRound)*(time-IPNTimePerFullRound)/2;  //匀加速
-        if (period>=IPNCellCountPerRound) {
+        CGFloat period=(1+time-IPZTimePerFullRound)*(time-IPZTimePerFullRound)/2;  //匀加速
+        if (period>=IPZCellCountPerRound) {
             period=0;
         }
         
-        startAngle=originAngle-period*2*M_PI/IPNCellCountPerRound;
+        startAngle=originAngle-period*2*M_PI/IPZCellCountPerRound;
         endAngle=originAngle;
-        CGContextAddArc(ctx, CGRectGetMidX(self.bounds) , CGRectGetMidY(self.bounds) , IPNRadius, startAngle,endAngle , 1);
+        CGContextAddArc(ctx, CGRectGetMidX(self.bounds) , CGRectGetMidY(self.bounds) , IPZRadius, startAngle,endAngle , 1);
     }
     
     CGContextStrokePath(ctx);

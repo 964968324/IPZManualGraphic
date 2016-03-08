@@ -1,5 +1,5 @@
 //
-//  IPNLoadingFailLayer.h
+//  IPZLoadingFailLayer.h
 //  IpayNowScanner
 //
 //  Created by 刘宁 on 15/12/17.
@@ -8,7 +8,7 @@
 
 #import <QuartzCore/QuartzCore.h>
 
-@interface IPNLoadingFailLayer : CALayer
+@interface IPZLoadingFailLayer : CALayer
 
 @property CGFloat time;
 

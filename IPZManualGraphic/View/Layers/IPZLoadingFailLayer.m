@@ -1,23 +1,23 @@
 //
-//  IPNLoadingFailLayer.m
+//  IPZLoadingFailLayer.m
 //  IpayNowScanner
 //
 //  Created by 刘宁 on 15/12/17.
 //  Copyright © 2015年 刘宁. All rights reserved.
 //
 
-#import "IPNLoadingFailLayer.h"
+#import "IPZLoadingFailLayer.h"
 #import <UIKit/UIKit.h>
 
 #define kActiveColor  [UIColor colorWithRed:209.0/255 green:17.0/255 blue:29.0/255 alpha:1.0]
 #define kNegativeColor [UIColor colorWithRed:31.0/255 green:33.0/255 blue:48.0/255 alpha:1.0]
-#define IPNRadius             30
-#define IPNCellCountPerRound    21
+#define IPZRadius             30
+#define IPZCellCountPerRound    21
 #define IPZOriginAngle          -M_PI+M_PI*2/24
 #define IPZLeftVerticalCellDistance   30*sin(45.0/180*M_PI)/9
 #define IPZLeftHorizonCellDistance   30*cos(45.0/180*M_PI)/9
 
-@implementation IPNLoadingFailLayer
+@implementation IPZLoadingFailLayer
 
 @dynamic time;
 
@@ -54,8 +54,8 @@
         
         CGFloat period=(1+time)*time/2;
         CGFloat startAngle=IPZOriginAngle;
-        CGFloat endAngle=IPZOriginAngle-period*2*M_PI/IPNCellCountPerRound;
-        CGContextAddArc(ctx, CGRectGetMidX(self.bounds) , CGRectGetMidY(self.bounds) , IPNRadius, startAngle,endAngle , 1);
+        CGFloat endAngle=IPZOriginAngle-period*2*M_PI/IPZCellCountPerRound;
+        CGContextAddArc(ctx, CGRectGetMidX(self.bounds) , CGRectGetMidY(self.bounds) , IPZRadius, startAngle,endAngle , 1);
         CGContextStrokePath(ctx);
         return;
     }
@@ -70,11 +70,11 @@
     
     CGFloat  endAngle=IPZOriginAngle;
     CGFloat  startAngle=IPZOriginAngle-2*M_PI;
-    CGContextAddArc(ctx, CGRectGetMidX(self.bounds) , CGRectGetMidY(self.bounds) , IPNRadius, startAngle,endAngle , 0);
+    CGContextAddArc(ctx, CGRectGetMidX(self.bounds) , CGRectGetMidY(self.bounds) , IPZRadius, startAngle,endAngle , 0);
     
     if (period<10) {
-        CGFloat leftX=CGRectGetMidX(self.bounds)+IPNRadius*cos(15 *2*M_PI/24);
-        CGFloat leftY=CGRectGetMidY(self.bounds)+IPNRadius*sin(15 *2*M_PI/24);
+        CGFloat leftX=CGRectGetMidX(self.bounds)+IPZRadius*cos(15 *2*M_PI/24);
+        CGFloat leftY=CGRectGetMidY(self.bounds)+IPZRadius*sin(15 *2*M_PI/24);
         CGContextMoveToPoint(ctx, leftX, leftY);
         
         CGFloat rightX=leftX+IPZLeftHorizonCellDistance*period;
@@ -82,8 +82,8 @@
         CGContextAddLineToPoint(ctx,rightX , rightY);
     }else if (period<14){
 //        period=[self getYushuByA:period andB:12];
-        CGFloat leftX=CGRectGetMidX(self.bounds)+IPNRadius*cos(15 *2*M_PI/24);
-        CGFloat leftY=CGRectGetMidY(self.bounds)+IPNRadius*sin(15 *2*M_PI/24);
+        CGFloat leftX=CGRectGetMidX(self.bounds)+IPZRadius*cos(15 *2*M_PI/24);
+        CGFloat leftY=CGRectGetMidY(self.bounds)+IPZRadius*sin(15 *2*M_PI/24);
         CGContextMoveToPoint(ctx,leftX+IPZLeftHorizonCellDistance*(period-10), leftY+IPZLeftVerticalCellDistance*(period-10));
         
         CGFloat rightX=leftX+IPZLeftVerticalCellDistance*period;
@@ -92,15 +92,15 @@
     }else{
         period=period-14;
         
-        CGFloat leftX=CGRectGetMidX(self.bounds)+IPNRadius*cos(15 *2*M_PI/24);
-        CGFloat leftY=CGRectGetMidY(self.bounds)+IPNRadius*sin(15 *2*M_PI/24);
+        CGFloat leftX=CGRectGetMidX(self.bounds)+IPZRadius*cos(15 *2*M_PI/24);
+        CGFloat leftY=CGRectGetMidY(self.bounds)+IPZRadius*sin(15 *2*M_PI/24);
         CGContextMoveToPoint(ctx,leftX+IPZLeftHorizonCellDistance*4, leftY+IPZLeftVerticalCellDistance*4);
         CGFloat rightX=leftX+IPZLeftVerticalCellDistance*14;
         CGFloat rightY=leftY+IPZLeftHorizonCellDistance*14;
         CGContextAddLineToPoint(ctx,rightX , rightY );
         
-        leftX=CGRectGetMidX(self.bounds)+IPNRadius*cos(9 *2*M_PI/24);
-        leftY=CGRectGetMidY(self.bounds)+IPNRadius*sin( 9 *2*M_PI/24);
+        leftX=CGRectGetMidX(self.bounds)+IPZRadius*cos(9 *2*M_PI/24);
+        leftY=CGRectGetMidY(self.bounds)+IPZRadius*sin( 9 *2*M_PI/24);
         CGContextMoveToPoint(ctx, leftX+IPZLeftHorizonCellDistance*4, leftY-IPZLeftVerticalCellDistance*4);
         
         rightX=leftX+IPZLeftVerticalCellDistance*(4+period);

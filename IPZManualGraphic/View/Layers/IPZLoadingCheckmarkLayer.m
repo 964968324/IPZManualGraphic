@@ -1,22 +1,22 @@
 //
-//  IPNLoadingCheckmarkLayer.m
+//  IPZLoadingCheckmarkLayer.m
 //  IPZManualGraphic
 //
 //  Created by 刘宁 on 15/12/11.
-//  Copyright © 2015年 ipaynow. All rights reserved.
+//  Copyright © 2015年 刘宁. All rights reserved.
 //
 
-#import "IPNLoadingCheckmarkLayer.h"
+#import "IPZLoadingCheckmarkLayer.h"
 #import <UIKit/UIKit.h>
 
 #define kActiveColor  [UIColor colorWithRed:209.0/255 green:17.0/255 blue:29.0/255 alpha:1.0]
-#define IPNRadius             30
-#define IPNCellCountPerRound    21
+#define IPZRadius             30
+#define IPZCellCountPerRound    21
 #define IPZOriginAngle     -M_PI+M_PI*2/24
 #define IPZLeftVerticalCellDistance   30*sin(45.0/180*M_PI)/12
 #define IPZLeftHorizonCellDistance   30*cos(45.0/180*M_PI)/12
 
-@implementation IPNLoadingCheckmarkLayer
+@implementation IPZLoadingCheckmarkLayer
 
 
 @dynamic time;
@@ -48,8 +48,8 @@
     if (time<6) {
         CGFloat period=(1+time)*time/2;
         CGFloat startAngle=IPZOriginAngle;
-        CGFloat endAngle=IPZOriginAngle-period*2*M_PI/IPNCellCountPerRound;
-        CGContextAddArc(ctx, CGRectGetMidX(self.bounds) , CGRectGetMidY(self.bounds) , IPNRadius, startAngle,endAngle , 1);
+        CGFloat endAngle=IPZOriginAngle-period*2*M_PI/IPZCellCountPerRound;
+        CGContextAddArc(ctx, CGRectGetMidX(self.bounds) , CGRectGetMidY(self.bounds) , IPZRadius, startAngle,endAngle , 1);
         CGContextStrokePath(ctx);
         return;
     }
@@ -63,11 +63,11 @@
 
     CGFloat  endAngle=IPZOriginAngle;
     CGFloat  startAngle=IPZOriginAngle-2*M_PI;
-    CGContextAddArc(ctx, CGRectGetMidX(self.bounds) , CGRectGetMidY(self.bounds) , IPNRadius, startAngle,endAngle , 0);
+    CGContextAddArc(ctx, CGRectGetMidX(self.bounds) , CGRectGetMidY(self.bounds) , IPZRadius, startAngle,endAngle , 0);
     
     if (period<12) {
-        CGFloat leftX=CGRectGetMidX(self.bounds)+IPNRadius*cos(13 *2*M_PI/24);
-        CGFloat leftY=CGRectGetMidY(self.bounds)+IPNRadius*sin(13 *2*M_PI/24);
+        CGFloat leftX=CGRectGetMidX(self.bounds)+IPZRadius*cos(13 *2*M_PI/24);
+        CGFloat leftY=CGRectGetMidY(self.bounds)+IPZRadius*sin(13 *2*M_PI/24);
         CGContextMoveToPoint(ctx, leftX, leftY);
         
         CGFloat rightX=leftX+IPZLeftHorizonCellDistance*period;
@@ -75,8 +75,8 @@
         CGContextAddLineToPoint(ctx,rightX , rightY);
     }else if (period<17){
         period=[self getYushuByA:period andB:12];
-        CGFloat leftX=CGRectGetMidX(self.bounds)+IPNRadius*cos(13 *2*M_PI/24);
-        CGFloat leftY=CGRectGetMidY(self.bounds)+IPNRadius*sin(13 *2*M_PI/24);
+        CGFloat leftX=CGRectGetMidX(self.bounds)+IPZRadius*cos(13 *2*M_PI/24);
+        CGFloat leftY=CGRectGetMidY(self.bounds)+IPZRadius*sin(13 *2*M_PI/24);
         CGContextMoveToPoint(ctx, leftX, leftY);
         
         CGFloat centerX=leftX  +IPZLeftHorizonCellDistance*12;
@@ -89,8 +89,8 @@
     }else{
         period=period-12;
 
-        CGFloat leftX=CGRectGetMidX(self.bounds)+IPNRadius*cos(13 *2*M_PI/24);
-        CGFloat leftY=CGRectGetMidY(self.bounds)+IPNRadius*sin(13 *2*M_PI/24);
+        CGFloat leftX=CGRectGetMidX(self.bounds)+IPZRadius*cos(13 *2*M_PI/24);
+        CGFloat leftY=CGRectGetMidY(self.bounds)+IPZRadius*sin(13 *2*M_PI/24);
         CGContextMoveToPoint(ctx, leftX+IPZLeftHorizonCellDistance*(period-5), leftY+IPZLeftVerticalCellDistance*(period-5));
         
         CGFloat centerX=leftX  +IPZLeftHorizonCellDistance*12;

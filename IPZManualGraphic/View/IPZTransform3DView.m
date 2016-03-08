@@ -10,11 +10,6 @@
 
 @implementation IPZTransform3DView
 
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
 
 -(void)rotate3D{
     CATransform3D transform = self.layer.transform;
