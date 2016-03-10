@@ -11,6 +11,7 @@
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet IPZDynamicArcView *loadingView;
+@property (weak, nonatomic) IBOutlet UILabel *lblDesc;
 
 - (IBAction)btnSuccessClick:(id)sender;
 - (IBAction)btnFailClick:(id)sender;
@@ -22,6 +23,8 @@
 
 - (void)viewDidLoad {
     // Do any additional setup after loading the view, typically from a nib.
+    
+    __weak ViewController *weakSelf=self;
     _loadingView.callBack=^(){
         NSString *strResult;
         if(_loadingView.status==IPZLoadStatusSuccess) {
@@ -30,9 +33,8 @@
             strResult=@"加载失败";
         }
         
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            UIAlertView *alert=[[UIAlertView alloc]initWithTitle:strResult message:@"" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
-            [alert show];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            weakSelf.lblDesc.text=strResult;
         });
     };
 }
