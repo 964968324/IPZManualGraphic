@@ -22,6 +22,8 @@
 		1FEB41D11B95815C003789E6 /* IPZLoadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FEB41D01B95815C003789E6 /* IPZLoadView.m */; };
 		1FEB41D41B9581B0003789E6 /* IPZPointLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FEB41D31B9581B0003789E6 /* IPZPointLayer.m */; };
 		C731AD671C1D30C50014AEAA /* IPZLoadingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C731AD661C1D30C50014AEAA /* IPZLoadingLayer.m */; };
+		C750A8BF1C91248D0087174A /* LoadingSuccess.gif in Resources */ = {isa = PBXBuildFile; fileRef = C750A8BE1C91248D0087174A /* LoadingSuccess.gif */; };
+		C750A8C11C9124950087174A /* LoadingFail.gif in Resources */ = {isa = PBXBuildFile; fileRef = C750A8C01C9124950087174A /* LoadingFail.gif */; };
 		C76EB4771C1B25BA0071CA28 /* IPZColorLoadLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C76EB4761C1B25BA0071CA28 /* IPZColorLoadLayer.m */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +56,8 @@
 		1FEB41D31B9581B0003789E6 /* IPZPointLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IPZPointLayer.m; path = ../IPZPointLayer.m; sourceTree = "<group>"; };
 		C731AD651C1D30C50014AEAA /* IPZLoadingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPZLoadingLayer.h; sourceTree = "<group>"; };
 		C731AD661C1D30C50014AEAA /* IPZLoadingLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPZLoadingLayer.m; sourceTree = "<group>"; };
+		C750A8BE1C91248D0087174A /* LoadingSuccess.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = LoadingSuccess.gif; path = ../../LoadingSuccess.gif; sourceTree = "<group>"; };
+		C750A8C01C9124950087174A /* LoadingFail.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = LoadingFail.gif; path = ../../LoadingFail.gif; sourceTree = "<group>"; };
 		C76EB4751C1B25BA0071CA28 /* IPZColorLoadLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPZColorLoadLayer.h; sourceTree = "<group>"; };
 		C76EB4761C1B25BA0071CA28 /* IPZColorLoadLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPZColorLoadLayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				1FAD81EA1B8AB931006D624B /* IPZManualGraphic */,
+				C750A8BD1C9124550087174A /* ScreenShots */,
 				1FAD81E91B8AB931006D624B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -143,6 +148,15 @@
 				1F5B56EE1BE863E200CC6E3C /* IPZDynamicArcView.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		C750A8BD1C9124550087174A /* ScreenShots */ = {
+			isa = PBXGroup;
+			children = (
+				C750A8C01C9124950087174A /* LoadingFail.gif */,
+				C750A8BE1C91248D0087174A /* LoadingSuccess.gif */,
+			);
+			path = ScreenShots;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,7 +217,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C750A8C11C9124950087174A /* LoadingFail.gif in Resources */,
 				1FAD81F71B8AB931006D624B /* Main.storyboard in Resources */,
+				C750A8BF1C91248D0087174A /* LoadingSuccess.gif in Resources */,
 				1FAD81FC1B8AB931006D624B /* LaunchScreen.xib in Resources */,
 				1FAD81F91B8AB931006D624B /* Images.xcassets in Resources */,
 			);
