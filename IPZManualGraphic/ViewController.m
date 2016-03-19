@@ -15,6 +15,7 @@
 
 - (IBAction)btnSuccessClick:(id)sender;
 - (IBAction)btnFailClick:(id)sender;
+- (IBAction)touchDown:(id)sender;
 
 @end
 
@@ -23,7 +24,6 @@
 
 - (void)viewDidLoad {
     // Do any additional setup after loading the view, typically from a nib.
-    
     __weak ViewController *weakSelf=self;
     _loadingView.callBack=^(){
         NSString *strResult;
@@ -37,7 +37,9 @@
             weakSelf.lblDesc.text=strResult;
         });
     };
+    
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -51,4 +53,17 @@
 - (IBAction)btnFailClick:(id)sender {
     _loadingView.status=IPZLoadStatusFail;
 }
+
+- (IBAction)touchDown:(id)sender {
+    dispatch_queue_t queue;
+    dispatch_async(queue, ^{
+        NSURL *url=[NSURL URLWithString:@""];
+        NSData *data=[NSData dataWithContentsOfURL:url];
+        UIImage *image=[UIImage imageWithData:data];
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            
+        });
+    });
+}
+
 @end

@@ -25,6 +25,11 @@
 		C750A8C61C9127740087174A /* LoadingFail.gif in Resources */ = {isa = PBXBuildFile; fileRef = C750A8C41C9127740087174A /* LoadingFail.gif */; };
 		C750A8C71C9127740087174A /* LoadingSuccess.gif in Resources */ = {isa = PBXBuildFile; fileRef = C750A8C51C9127740087174A /* LoadingSuccess.gif */; };
 		C76EB4771C1B25BA0071CA28 /* IPZColorLoadLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C76EB4761C1B25BA0071CA28 /* IPZColorLoadLayer.m */; };
+		C799582D1C9CF25A00CDEEFF /* IPZCoreTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C799582C1C9CF25A00CDEEFF /* IPZCoreTextViewController.m */; };
+		C79958301C9CF2E300CDEEFF /* IPZCoreTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = C799582F1C9CF2E300CDEEFF /* IPZCoreTextView.m */; };
+		C79958321C9CF40200CDEEFF /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C79958311C9CF40200CDEEFF /* CoreText.framework */; };
+		C79958371C9CF79900CDEEFF /* IPZMarkupParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C79958361C9CF79900CDEEFF /* IPZMarkupParser.m */; };
+		C799583D1C9D8EAE00CDEEFF /* IPZMainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C799583C1C9D8EAE00CDEEFF /* IPZMainTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +65,15 @@
 		C750A8C51C9127740087174A /* LoadingSuccess.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LoadingSuccess.gif; sourceTree = "<group>"; };
 		C76EB4751C1B25BA0071CA28 /* IPZColorLoadLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPZColorLoadLayer.h; sourceTree = "<group>"; };
 		C76EB4761C1B25BA0071CA28 /* IPZColorLoadLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPZColorLoadLayer.m; sourceTree = "<group>"; };
+		C799582B1C9CF25A00CDEEFF /* IPZCoreTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPZCoreTextViewController.h; sourceTree = "<group>"; };
+		C799582C1C9CF25A00CDEEFF /* IPZCoreTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPZCoreTextViewController.m; sourceTree = "<group>"; };
+		C799582E1C9CF2E300CDEEFF /* IPZCoreTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPZCoreTextView.h; sourceTree = "<group>"; };
+		C799582F1C9CF2E300CDEEFF /* IPZCoreTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPZCoreTextView.m; sourceTree = "<group>"; };
+		C79958311C9CF40200CDEEFF /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		C79958351C9CF79900CDEEFF /* IPZMarkupParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPZMarkupParser.h; sourceTree = "<group>"; };
+		C79958361C9CF79900CDEEFF /* IPZMarkupParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPZMarkupParser.m; sourceTree = "<group>"; };
+		C799583B1C9D8EAE00CDEEFF /* IPZMainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPZMainTableViewController.h; sourceTree = "<group>"; };
+		C799583C1C9D8EAE00CDEEFF /* IPZMainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPZMainTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C79958321C9CF40200CDEEFF /* CoreText.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +110,7 @@
 		1FAD81DF1B8AB931006D624B = {
 			isa = PBXGroup;
 			children = (
+				C79958331C9CF41500CDEEFF /* FrameWorks */,
 				C750A8C31C9127740087174A /* ScreenShots */,
 				1FAD81EA1B8AB931006D624B /* IPZManualGraphic */,
 				1FAD81E91B8AB931006D624B /* Products */,
@@ -112,11 +128,16 @@
 		1FAD81EA1B8AB931006D624B /* IPZManualGraphic */ = {
 			isa = PBXGroup;
 			children = (
+				C79958341C9CF77C00CDEEFF /* Model */,
 				1FAD82111B8AB950006D624B /* View */,
 				1FAD81EF1B8AB931006D624B /* AppDelegate.h */,
 				1FAD81F01B8AB931006D624B /* AppDelegate.m */,
+				C799583B1C9D8EAE00CDEEFF /* IPZMainTableViewController.h */,
+				C799583C1C9D8EAE00CDEEFF /* IPZMainTableViewController.m */,
 				1FAD81F21B8AB931006D624B /* ViewController.h */,
 				1FAD81F31B8AB931006D624B /* ViewController.m */,
+				C799582B1C9CF25A00CDEEFF /* IPZCoreTextViewController.h */,
+				C799582C1C9CF25A00CDEEFF /* IPZCoreTextViewController.m */,
 				1FAD81F51B8AB931006D624B /* Main.storyboard */,
 				1FAD81F81B8AB931006D624B /* Images.xcassets */,
 				1FAD81FA1B8AB931006D624B /* LaunchScreen.xib */,
@@ -146,6 +167,8 @@
 				1FAD82131B8AB9A7006D624B /* IPZTransform3DView.m */,
 				1F5B56ED1BE863E200CC6E3C /* IPZDynamicArcView.h */,
 				1F5B56EE1BE863E200CC6E3C /* IPZDynamicArcView.m */,
+				C799582E1C9CF2E300CDEEFF /* IPZCoreTextView.h */,
+				C799582F1C9CF2E300CDEEFF /* IPZCoreTextView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -157,6 +180,23 @@
 				C750A8C51C9127740087174A /* LoadingSuccess.gif */,
 			);
 			path = ScreenShots;
+			sourceTree = "<group>";
+		};
+		C79958331C9CF41500CDEEFF /* FrameWorks */ = {
+			isa = PBXGroup;
+			children = (
+				C79958311C9CF40200CDEEFF /* CoreText.framework */,
+			);
+			path = FrameWorks;
+			sourceTree = "<group>";
+		};
+		C79958341C9CF77C00CDEEFF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C79958351C9CF79900CDEEFF /* IPZMarkupParser.h */,
+				C79958361C9CF79900CDEEFF /* IPZMarkupParser.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,14 +274,18 @@
 			files = (
 				1F385CCE1C33D8AA007DEAD7 /* IPZLoadingFailLayer.m in Sources */,
 				1FEB41D11B95815C003789E6 /* IPZLoadView.m in Sources */,
+				C799582D1C9CF25A00CDEEFF /* IPZCoreTextViewController.m in Sources */,
 				1FAD82141B8AB9A7006D624B /* IPZTransform3DView.m in Sources */,
 				1FEB41D41B9581B0003789E6 /* IPZPointLayer.m in Sources */,
 				1FAD81F41B8AB931006D624B /* ViewController.m in Sources */,
+				C79958301C9CF2E300CDEEFF /* IPZCoreTextView.m in Sources */,
 				1F3B18D21C1AC4A100AA87CD /* IPZLoadingCheckmarkLayer.m in Sources */,
 				1FAD81F11B8AB931006D624B /* AppDelegate.m in Sources */,
 				C76EB4771C1B25BA0071CA28 /* IPZColorLoadLayer.m in Sources */,
 				1F5B56EC1BE8609200CC6E3C /* IPZArcLayer.m in Sources */,
 				1F5B56EF1BE863E200CC6E3C /* IPZDynamicArcView.m in Sources */,
+				C79958371C9CF79900CDEEFF /* IPZMarkupParser.m in Sources */,
+				C799583D1C9D8EAE00CDEEFF /* IPZMainTableViewController.m in Sources */,
 				1FAD81EE1B8AB931006D624B /* main.m in Sources */,
 				C731AD671C1D30C50014AEAA /* IPZLoadingLayer.m in Sources */,
 				1F51F3551B8C14FE0080C627 /* IPZBasicDrawView.m in Sources */,
