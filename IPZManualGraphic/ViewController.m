@@ -37,7 +37,7 @@
             weakSelf.lblDesc.text=strResult;
         });
     };
-    
+    UINavigationController *navi;
 }
 
 

@@ -21,6 +21,8 @@
 		1FAD82141B8AB9A7006D624B /* IPZTransform3DView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FAD82131B8AB9A7006D624B /* IPZTransform3DView.m */; };
 		1FEB41D11B95815C003789E6 /* IPZLoadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FEB41D01B95815C003789E6 /* IPZLoadView.m */; };
 		1FEB41D41B9581B0003789E6 /* IPZPointLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FEB41D31B9581B0003789E6 /* IPZPointLayer.m */; };
+		C71C1F6C1C9E2F74007DEE43 /* Twitter.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C71C1F6B1C9E2F74007DEE43 /* Twitter.jpg */; };
+		C71C1F6F1C9EDBDD007DEE43 /* IPZEllipseView.m in Sources */ = {isa = PBXBuildFile; fileRef = C71C1F6E1C9EDBDD007DEE43 /* IPZEllipseView.m */; };
 		C731AD671C1D30C50014AEAA /* IPZLoadingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C731AD661C1D30C50014AEAA /* IPZLoadingLayer.m */; };
 		C750A8C61C9127740087174A /* LoadingFail.gif in Resources */ = {isa = PBXBuildFile; fileRef = C750A8C41C9127740087174A /* LoadingFail.gif */; };
 		C750A8C71C9127740087174A /* LoadingSuccess.gif in Resources */ = {isa = PBXBuildFile; fileRef = C750A8C51C9127740087174A /* LoadingSuccess.gif */; };
@@ -59,6 +61,9 @@
 		1FEB41D01B95815C003789E6 /* IPZLoadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPZLoadView.m; sourceTree = "<group>"; };
 		1FEB41D21B9581B0003789E6 /* IPZPointLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IPZPointLayer.h; path = ../IPZPointLayer.h; sourceTree = "<group>"; };
 		1FEB41D31B9581B0003789E6 /* IPZPointLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IPZPointLayer.m; path = ../IPZPointLayer.m; sourceTree = "<group>"; };
+		C71C1F6B1C9E2F74007DEE43 /* Twitter.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Twitter.jpg; sourceTree = "<group>"; };
+		C71C1F6D1C9EDBDD007DEE43 /* IPZEllipseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPZEllipseView.h; sourceTree = "<group>"; };
+		C71C1F6E1C9EDBDD007DEE43 /* IPZEllipseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPZEllipseView.m; sourceTree = "<group>"; };
 		C731AD651C1D30C50014AEAA /* IPZLoadingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPZLoadingLayer.h; sourceTree = "<group>"; };
 		C731AD661C1D30C50014AEAA /* IPZLoadingLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPZLoadingLayer.m; sourceTree = "<group>"; };
 		C750A8C41C9127740087174A /* LoadingFail.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LoadingFail.gif; sourceTree = "<group>"; };
@@ -169,6 +174,8 @@
 				1F5B56EE1BE863E200CC6E3C /* IPZDynamicArcView.m */,
 				C799582E1C9CF2E300CDEEFF /* IPZCoreTextView.h */,
 				C799582F1C9CF2E300CDEEFF /* IPZCoreTextView.m */,
+				C71C1F6D1C9EDBDD007DEE43 /* IPZEllipseView.h */,
+				C71C1F6E1C9EDBDD007DEE43 /* IPZEllipseView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -176,6 +183,7 @@
 		C750A8C31C9127740087174A /* ScreenShots */ = {
 			isa = PBXGroup;
 			children = (
+				C71C1F6B1C9E2F74007DEE43 /* Twitter.jpg */,
 				C750A8C41C9127740087174A /* LoadingFail.gif */,
 				C750A8C51C9127740087174A /* LoadingSuccess.gif */,
 			);
@@ -260,6 +268,7 @@
 				1FAD81F71B8AB931006D624B /* Main.storyboard in Resources */,
 				C750A8C71C9127740087174A /* LoadingSuccess.gif in Resources */,
 				C750A8C61C9127740087174A /* LoadingFail.gif in Resources */,
+				C71C1F6C1C9E2F74007DEE43 /* Twitter.jpg in Resources */,
 				1FAD81FC1B8AB931006D624B /* LaunchScreen.xib in Resources */,
 				1FAD81F91B8AB931006D624B /* Images.xcassets in Resources */,
 			);
@@ -289,6 +298,7 @@
 				1FAD81EE1B8AB931006D624B /* main.m in Sources */,
 				C731AD671C1D30C50014AEAA /* IPZLoadingLayer.m in Sources */,
 				1F51F3551B8C14FE0080C627 /* IPZBasicDrawView.m in Sources */,
+				C71C1F6F1C9EDBDD007DEE43 /* IPZEllipseView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
